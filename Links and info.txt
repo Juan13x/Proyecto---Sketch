@@ -1,0 +1,52 @@
+------------------------------------
+activate environment:
+./ENV_PDII/Scripts/activate
+
+verificar tener permiso de ejecutar scripts en tu computador. Para windows mirar con:
+Get-ExecutionPolicy -list
+
+y sale algo como:
+Scope ExecutionPolicy
+----- ---------------
+MachinePolicy       Undefined
+UserPolicy       Undefined
+Process       Undefined
+CurrentUser       Undefined
+LocalMachine    RemoteSigned
+
+debes verificar que LocalMachine sea como mínimo RemoteSigned. Si no lo tiene así, puedes hacer lo siguiente, ejecutando como administrador:
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
+Select the interpreter at visual studio as the one at the virtual enviroment. See: "Reconocimiento de carácteres usando EASYOCR" to know how to do it. timespan: 3:55 - 4:45.
+----------------------------------
+LINKS:
+Cómo utilizar Live Sahre: https://www.youtube.com/watch?v=1jybppCJBEI&ab_channel=hdeleon.net
+
+cómo utilizar git desde VSCODE: https://www.youtube.com/watch?v=AYbgqmyg7dk&ab_channel=EDteam
+
+entorno virtuales: https://www.youtube.com/watch?v=N9PdRkXOQ4w&ab_channel=OMES
+
+Reconocimiento de carácteres usando EASYOCR: https://www.youtube.com/watch?v=0OBAAPvG4XU&ab_channel=OMES
+
+Transformación de perspectiva: https://www.youtube.com/watch?v=lkwtwhWKQjo&ab_channel=OMES
+
+Escaner de documentos: https://www.youtube.com/watch?v=iAnCUJvNCGY&ab_channel=OMES
+
+<opcional> Creation of GUI using Tkinter 0:00:00 hasta 3:00:00 y desde 5:16:00 hasta el final: https://www.youtube.com/watch?v=YXPyB4XeYLA
+------------------------------------
+SCHEDULE:
+<fecha>
+<yo>/<usted>: 
+
+antes del 27/06:
+codigo básico, interfaz,probar OCR estandar/... -> 
+
+Primera semana de vacaciones:
+.../Afinar código e interfaz-Investigar técnicas -> 
+
+segunda semana de vacaciones:
+probar que funciona con el OCR estándar en el código afinado/Investigar técnicas ->
+
+finalizando vacaciones de profesores:
+hacer preprocesado para el OCR de nosotros/Hacer presentación
