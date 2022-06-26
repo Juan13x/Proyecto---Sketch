@@ -76,4 +76,56 @@ Propuestas:
 3: hacer OCR (sección 'básica')
 4: Los 2 buscar sobre ML
 5: Los 2 buscar sobre DL
+
+PROCESO SKETCH:
+variables:
+directory_image
+image_container
+image_counter
+image_selected
+result
+
+proceso:
+-directory click: 
+    -setea variable directory_image
+    -disable itself
+    -disable next and back
+-One image click: 
+    -Reset variable directory_image
+    -disable itself
+    -disable next and back
+
+-click carpeta:
+    -abre una ventana con opciones según la directory_image
+
+-click update:
+    -enable next and back if is_set(directory_image)
+    -resetea image_counter
+    -actualiza image_container depending on directory_image
+    -runs "selectImage"
+
+click back or next:
+    -increment or decrement counter_image
+    -changes image_selected
+
+click submit:
+    -calls OCR_process()
+    -sets widget_result
+
+clickreset:
+    -reset result
+    -sets widget_result
+
+click save:
+    -saves result as an .txt
+    -sets widget_result with "file saved".
+
+functions:
+Get_images_directory():
+    -create list of names of images from the directory
+selectImage(): 
+    -assigns image_selected from image_counter
+    -modify image_counter (if directory_image)
+OCR_process():
+    -OCR process...
 '''

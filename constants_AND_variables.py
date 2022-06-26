@@ -6,7 +6,7 @@ c_maxColumnSpan = 37
 s = lambda num: int(c_size * num)
 
 pos = {
-    'infoPhoto1':(s(0.5), s(1)),
+    'infoPhoto1':(s(0.25), s(1)),
 
     'infoPhoto2': (s(0.5), s(6)),
 
@@ -23,6 +23,8 @@ pos = {
     'LOGO': (s(2), s(11)),
 
     'selected': (s(7), s(2)),
+
+    'update': (s(18), s(22)),
 
     'buttonBack': (s(7), s(15)),
 
@@ -56,7 +58,7 @@ pos = {
     }
 
 sizes = {
-    'infoPhoto1':(s(6), s(1)),
+    'infoPhoto1':(s(6.5), s(1)),
 
     'infoPhoto2': (s(6), s(1)),
 
@@ -73,6 +75,8 @@ sizes = {
     'LOGO': (s(3), s(3)),
 
     'selected': (s(9), s(12)),
+
+    'update': (s(4), s(1)),
 
     'buttonBack': (s(2), s(1)),
 
@@ -104,15 +108,17 @@ sizes = {
 strings = {
     'windowTitle': "Photo Scanner",
 
-    'infoPhoto1': 'David Grajales Grajales',
+    'infoPhoto1': 'David Grajales Cárdenas',
 
-    'infoPhoto2': 'Juan Calle Jimenez',
+    'infoPhoto2': 'Juan Calle Jiménez',
 
     'infoSelection': 'Type Selection:',
     
     'infoOperation': 'Operation:',
 
     'infoVertices': 'Vertices:',
+
+    'update': "update",
 
     'buttonBack': "<<",
 
@@ -136,7 +142,7 @@ strings = {
 
     'submit': 'Submit',
     
-    'title': "Photo Scanner"
+    'title': "UTEXT Scanner"
     }
 
 images = {

@@ -89,6 +89,15 @@ widget_buttonNext.place(
     width = sizes['buttonNext'][0],
     height = sizes['buttonNext'][1])
 
+#UPDATE
+#BUTTON SUBMIT
+widget_update = tk.Button(mainWindow, text = strings['update'])
+widget_update.place(
+    x = pos['update'][0],
+    y = pos['update'][1],
+    width = sizes['update'][0],
+    height = sizes['update'][1])
+
 #RESULT
 widget_result = tk.Text(mainWindow, bd=1, relief=tk.SOLID)
 widget_result.place(
