@@ -3,6 +3,47 @@ c_size = 20
 c_maxRowSpan = 27
 c_maxColumnSpan = 37
 
+test = ["hola", "como", "están", "espero que bien", "jajahshsa"]
+def getTest():
+    return test
+
+counterTest = 0
+def getCounterTest():
+    return counterTest
+def setCounterTest(value : int):
+    global counterTest
+    counterTest = value
+def resetCounterTest():
+    setCounterTest(0)
+def incrementCounterTest():
+    global counterTest
+    counterTest += 1
+
+imageContainer = []
+def getImageContainer():
+    return imageContainer
+
+imageCounter = 0
+def getImageCounter():
+    return imageCounter
+def setImageCounter(value:int):
+    global imageCounter
+    imageCounter = value
+
+imageSelected = ""
+def getImageSelected():
+    return imageSelected
+def setImageSelected(value:str):
+    global imageSelected
+    imageSelected = value
+
+result = ""
+def getResult():
+    return result
+def setResult(value : str):
+    global result
+    result = value
+
 s = lambda num: int(c_size * num)
 
 pos = {
@@ -40,17 +81,17 @@ pos = {
 
     'folderDirection': (s(3), s(21)),
 
-    'optionVertices1': (s(19), s(11)),
+    'optionVerticesManual': (s(19), s(11)),
 
-    'optionVertices2': (s(19), s(13)),
+    'optionVerticesAuto': (s(19), s(13)),
     
-    'optionTypeSelection1': (s(9), s(18)),
+    'optionTypeSelectionDiretory': (s(9), s(18)),
 
-    'optionTypeSelection2': (s(15), s(18)),
+    'optionTypeSelectionImage': (s(15), s(18)),
 
-    'optionOperation1': (s(18.8), s(5)),
+    'optionOperationOneByOne': (s(18.8), s(5)),
 
-    'optionOperation2': (s(18.8), s(7)),
+    'optionOperationAll': (s(18.8), s(7)),
 
     'result': (s(26), s(2)),
 
@@ -128,21 +169,46 @@ strings = {
 
     'save': 'Save',
 
-    'optionVertices1': "Manual",
+    'optionVerticesManual': "Manual",
 
-    'optionVertices2': "Auto",
+    'optionVerticesAuto': "Auto",
     
-    'optionTypeSelection1': "Directory",
+    'optionTypeSelectionDiretory': "Directory",
 
-    'optionTypeSelection2': "One Image",
+    'optionTypeSelectionImage': "One Image",
 
-    'optionOperation1': "Ony by One",
+    'optionOperationOneByOne': "Ony by One",
 
-    'optionOperation2': "All",
+    'optionOperationAll': "All",
 
     'submit': 'Submit',
     
-    'title': "UTEXT Scanner"
+    'title': "UTEXT Scanner",
+
+    'clickFolderChoice': {
+        'optionTypeSelectionDirectory':{
+            'title': "Select Directory",
+            'initialdir': "./default_Selection_dir"
+            },
+        'optionTypeSelectionImage':{
+            'title': 'Select Image File',
+            'initialdir': './default_Selection_dir',
+            'filetypes': (("Image files (*.png *.jpg *.jpeg)", "*.png *.jpg *.jpeg"),)
+            }} ,
+
+    'clickTypeSelection': {
+        'optionTypeSelectionDirectory': True,
+        'optionTypeSelectionImage': False},
+        
+    'clickVertices': {
+        'optionVerticesManual': True,
+        'optionVerticesAuto': False
+    },
+
+    'clickOperation': {
+        'optionOperationOneByOne': True,
+        'optionOperationAll': False
+    }
     }
 
 images = {
@@ -154,5 +220,5 @@ images = {
 
     "selected": "./images/Udea_Escudo.png",
 
-    'folderChoice': "./images/folder.ico",
+    'folderChoice': "./images/folder.ico"
     }
