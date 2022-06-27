@@ -65,7 +65,6 @@ def clickVertices():
 
 def clickReset():
     setResult("")
-    resetCounterTest()
     itk.widget_result.delete(1.0, "end")
 
 def clickSave():

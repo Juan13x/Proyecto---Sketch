@@ -15,7 +15,7 @@ RadioButtonOperation =  tk.IntVar()
 RadioButtonTypeSelection = tk.IntVar()
 
 def initRadioButtons():
-    RadioButtonVertices.set(strings['clickVertices']['optionVerticesManual'])
+    RadioButtonVertices.set(strings['clickVertices']['optionVerticesAuto'])
     RadioButtonTypeSelection.set(strings['clickTypeSelection']['optionTypeSelectionImage'])
     RadioButtonOperation.set(strings['clickOperation']['optionOperationOneByOne'])
 
@@ -210,7 +210,7 @@ widget_infoOperation.place(
     height = sizes["infoVertices"][1])
 
 #VERTICES MODE ITEM 1
-widget_optionVerticesManual = tk.Radiobutton(mainWindow, text = strings['optionVerticesManual'], variable = RadioButtonVertices, value = strings['clickVertices']['optionVerticesManual'], state = 'disabled')
+widget_optionVerticesManual = tk.Radiobutton(mainWindow, text = strings['optionVerticesManual'], variable = RadioButtonVertices, value = strings['clickVertices']['optionVerticesManual'])
 widget_optionVerticesManual.place(
     x = pos["optionVerticesManual"][0],
     y = pos["optionVerticesManual"][1],
@@ -219,7 +219,7 @@ widget_optionVerticesManual.place(
 
 
 #VERTICES MODE ITEM 2
-widget_optionVerticesAuto = tk.Radiobutton(mainWindow, text = strings['optionVerticesAuto'], variable = RadioButtonVertices, value = strings['clickVertices']['optionVerticesAuto'])
+widget_optionVerticesAuto = tk.Radiobutton(mainWindow, text = strings['optionVerticesAuto'], variable = RadioButtonVertices, value = strings['clickVertices']['optionVerticesAuto'],state = 'disabled')
 widget_optionVerticesAuto.place(
     x = pos["optionVerticesAuto"][0],
     y = pos["optionVerticesAuto"][1],
@@ -234,3 +234,11 @@ title.place(
     y = pos['title'][1],
     width = sizes['title'][0],
     height = sizes['title'][1])
+
+#TEST
+widget_TestImage = tk.Label(mainWindow, image = "", bd=1, relief=tk.SOLID)
+widget_TestImage.place(
+    x = pos['test'][0], 
+    y = pos['test'][1],
+    width = sizes['test'][0], 
+    height = sizes['test'][1])
