@@ -1,34 +1,7 @@
 import tkinter as tk
 c_size = 20
 c_maxRowSpan = 27
-c_maxColumnSpan = 37
-
-test = ["hola", "como", "están", "espero que bien", "jajahshsa"]
-def getTest():
-    return test
-
-counterTest = 0
-def getCounterTest():
-    return counterTest
-def setCounterTest(value : int):
-    global counterTest
-    counterTest = value
-def resetCounterTest():
-    setCounterTest(0)
-def incrementCounterTest():
-    global counterTest
-    counterTest += 1
-
-imageContainer = []
-def getImageContainer():
-    return imageContainer
-
-imageCounter = 0
-def getImageCounter():
-    return imageCounter
-def setImageCounter(value:int):
-    global imageCounter
-    imageCounter = value
+c_maxColumnSpan = 48
 
 imageSelected = ""
 def getImageSelected():
@@ -64,6 +37,8 @@ pos = {
     'LOGO': (s(2), s(11)),
 
     'selected': (s(7), s(2)),
+
+    'test': (s(37), s(2)),
 
     'update': (s(18), s(22)),
 
@@ -116,6 +91,8 @@ sizes = {
     'LOGO': (s(3), s(3)),
 
     'selected': (s(9), s(12)),
+
+    'test': (s(9), s(12)),
 
     'update': (s(4), s(1)),
 
