@@ -2,6 +2,7 @@ import cv2
 import interface as itk
 from constants_AND_variables import *
 
+
 def getDirectoryFromImagePath(varSTR : str)-> str:   
     index : int
     #move along the string from end to start
