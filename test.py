@@ -1,3 +1,21 @@
+from interface import *
+from Interface_Functions import *
+
+widget_folderChoice.configure(command=clickFolderChoice)
+widget_optionTypeSelectionDiretory.configure(command = clickTypeSelection)
+widget_optionTypeSelectionImage.configure(command = clickTypeSelection)
+widget_update.configure(command=clickUpdate)
+widget_optionVerticesManual.configure(command = clickVertices)
+widget_optionVerticesAuto.configure(command = clickVertices)
+widget_optionOperationAll.configure(command = clickOperation)
+widget_optionOperationOneByOne.configure(command = clickOperation)
+widget_save.configure(command = clickSave)
+widget_reset.configure(command = clickReset)
+widget_submit.configure(command = clickSubmit)
+
+tk.mainloop()
+mainWindow.destroy()
+
 '''
 DATA:
 -look for data set: NOT READY
