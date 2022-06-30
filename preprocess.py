@@ -20,7 +20,8 @@ def ordenar_puntos(puntos):
 image = cv2.imread("./default_Selection_dir/img_00.jpeg")
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-canny = cv2.Canny(gray, 10, 150)
+_,bin = cv2.threshold(gray,127,255,cv2.THRESH_BINARY)
+canny = cv2.Canny(bin, 10, 150)
 canny = cv2.dilate(canny, None, iterations=1)
 
 cnts = cv2.findContours(canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]
@@ -46,6 +47,7 @@ for c in cnts:
         M = cv2.getPerspectiveTransform(pts1,pts2)
         dst = cv2.warpPerspective(gray,M,(270,310))
         break
+cv2.waitKey(0)
 
 # NOTE: all row, words and characters are save in a list: outer most elements are rows, middle-depth elements are words and inner most ones are chars
 
