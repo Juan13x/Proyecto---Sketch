@@ -3,6 +3,15 @@ import numpy as np
 import pytesseract
 
 #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+def histEcu(img,alpha,grid):
+    if alpha!=0:
+        img=cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+        L,A,B=cv2.split(img)
+        clahe = cv2.createCLAHE(clipLimit=alpha, tileGridSize=grid)
+        cl = clahe.apply(L)
+        img = cv2.merge((cl,A,B))
+        img = cv2.cvtColor(img, cv2.COLOR_LAB2BGR)
+    return img
 
 def ordenar_puntos(puntos):
 	n_puntos = np.concatenate([puntos[0], puntos[1], puntos[2], puntos[3]]).tolist()
@@ -19,6 +28,9 @@ def ordenar_puntos(puntos):
 
 image = cv2.imread("./default_Selection_dir/img_00.jpeg")
 
+alpha=5 #Parametro a ser cambiado más adelante por el usuario en interfaz
+grid=(10,10) #PArametro que puede ser cambiado más adelante con interfaz
+image=histEcu(image,alpha,grid)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 _,bin = cv2.threshold(gray,127,255,cv2.THRESH_BINARY)
 canny = cv2.Canny(bin, 10, 150)
@@ -51,13 +63,13 @@ cv2.waitKey(0)
 
 # NOTE: all row, words and characters are save in a list: outer most elements are rows, middle-depth elements are words and inner most ones are chars
 
-# TODO: Enhance contrast: Contrast Adjust, Equaliziton, etc... 
-# TODO: Binarize
+# TODO: Enhance contrast: Contrast Adjust, Equaliziton, etc... (In process)
+# TODO: Binarize (done)
 # TODO: Separate rows by using histogram or other technique
 # TODO: Separate words  of each row by using histogram or other technique
 # TODO: Seperate each word from each words
 # TODO: apply pytesseract or EASYOCR to check effectiveness at recovering the character
-# TODO: apply Machine Learning
+# TODO: apply Machine Learning (in process)
 # TODO: apply Deep Learning
 
 # texto = pytesseract.image_to_string(dst, lang='spa')
