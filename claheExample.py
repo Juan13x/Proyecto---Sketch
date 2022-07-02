@@ -1,4 +1,9 @@
+import cv2
+from tkinter import *
+import tkinter as tk
+from tkinter import ttk
 from tkinter import filedialog
+
 import tkinter as tk
 from tkinter import ttk
 import numpy as np
@@ -19,9 +24,9 @@ class Application(tk.Frame):
     def __createWidgets(self):
         self.window=tk.Frame(self)
         self.window.grid(row=0,column=0)
-        self.picture=Label(self.window)
+        self.picture=tk.Label(self.window)
         self.picture.grid(row=0,column=0,pady=2)
-        self.scaladorPlus = Scale(self.window, from_=0,tickinterval=1,resolution=0.2,length=300,showvalue=0, to=10,orient=HORIZONTAL, label="alpha",command=self.__histEcu)
+        self.scaladorPlus = tk.Scale(self.window, from_=0,tickinterval=1,resolution=0.2,length=300,showvalue=0, to=10,orient=HORIZONTAL, label="alpha",command=self.__histEcu)
         self.scaladorPlus.grid(row=1,column=0,pady=2)
         
         self.__histEcu(5)
